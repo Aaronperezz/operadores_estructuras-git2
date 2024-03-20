@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Practico</title>
+  </head>
+  <body>
+    <h1>Uso de vector para almacenar texto</h1>
+    <hr />
+    <label for="texto">Ingrese un texto:</label>
+    <input type="text" id="texto" />
+    <button onclick="agregarAlVector()">Botón 1</button>
+    <button onclick="mostrarVector()">Botón 2</button>
+
+    <script>
+      //vector para almacenar los textos
+      let vector = [];
+
+      function agregarAlVector() {
+        // Obtener el valor del campo de texto
+        var texto = document.getElementById("texto").value;
+
+        // Verificar si el texto está vacío
+        if (texto !== "") {
+          // Agregar el texto al vector
+          vector.push(texto);
+          alert("Texto agregado al vector correctamente.");
+        } else {
+          alert("El campo de texto está vacío.");
+        }
+      }
+
+      function mostrarVector() {
+        // Verificar si el vector tiene elementos
+        if (vector.length > 0) {
+          // Crear un mensaje con los valores del vector
+          var mensaje = "Elementos del vector:\n";
+          for (var i = 0; i < vector.length; i++) {
+            mensaje += i + 1 + ". " + vector[i] + "\n";
+          }
+          // Mostrar el mensaje
+          alert(mensaje);
+        } else {
+          alert("El vector está vacío.");
+        }
+      }
+    </script>
+  </body>
+</html>
